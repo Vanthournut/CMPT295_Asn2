@@ -79,18 +79,15 @@ h2 {
 }
 
 input[type="button"]{
-	background-color: #A6192E;
-	border-color: #7A1024;
+	background-color: #8087DD;
+	border-color: #000;
 	border-radius: 5px;
 	border-style: none none solid;
 	border-width: medium medium 3px;
 	color: #FFFFFF;
-	font-family: "DINWebMedium",sans-serif;
-	font-size: 1em;
+	font-size: 12pt;
 	font-weight: normal;
-	margin: 0px 3px;
-	padding: 3px;
-	float: right;
+	margin: 0% 0%;
 }
 
 footer {

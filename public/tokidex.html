@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Tokidex</title>
+		<title>Tokidex-Complete</title>
 
 		<link rel="stylesheet" href="tokidex.css" />
 
@@ -11,7 +11,7 @@
 
 	<body>
 			<header> 
-					<h1>Welcome to the Tokidex</h1>
+					<h1>Complete Tokidex</h1>
 					<div><a href="home.html">Home</a></div>
 					<div><a href="display.html">Display Tokimon</a></div>
 					<div><a href="register.html">Register Tokimon</a></div>
@@ -19,19 +19,32 @@
 
 			<main>
 				<form>
-				<h1>Welcome to the Tokidex!</h1>
+				<h1>View all Tokimon</h1>
 
-				<p>This site will help you manage, view, and register the Tokimon of world!</p>
+				<p>To change the way the Tokidex is sorted, select which attribute to sort by and whether you prefer
+					an ascending or descending sort on that attribute.	</p>
 
-				<p>To view a specific Tokimon, proceed to the 'Display Tokimon' page. You will need to enter the Tokimon id to
-					find the Tokimon. From there you can view the full information of that Tokimon, and delete it from the Tokidex
-					if you choose.</p>
+				<select id="sortAtt">
+						<option value="id">Id</option>
+						<option value="name">Name</option>
+						<option value="height">Height</option>
+						<option value="fly">Fly</option>
+						<option value="fight">Fight</option>
+						<option value="fire">Fire</option>
+						<option value="water">Water</option>
+						<option value="electric">Electric</option>
+						<option value="ice">Ice</option>
+						<option value="total">Total</option>
+						<option value="trainer">Trainer</option>
+				</select>
 
-				<p>To view the entire Tokidex database, proceed to the 'Complete Tokidex' page. You will be able to view all the Tokimon
-					currently registered in the Tokidex, and you will be able to sort them based on your prefered attribute.</p>
+				<select id="sortType">
+						<option value="ascending">Ascending</option>
+						<option value="descending">Descending</option>
+				</select>
+				
+				<input type="button" value="Sort"/>
 
-				<p>To register a new Tokimon, proceed to the 'Register Tokimon' page. Fill in the form on that page to add your new 
-					Tokimon to the Tokidex!</p>
 				</form>
 			</main>
 
