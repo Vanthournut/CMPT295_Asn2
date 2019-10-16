@@ -1,67 +1,63 @@
-function clearFields() {
-	for (var i = 1; i < 5; i++) {
-		document.getElementById("weight" + i).value = null;
-		document.getElementById("num" + i).value = null;
-        document.getElementById("den" + i).value = null;
-        document.getElementById("percent"+i).innerText = "";
-	}
-	
-    document.getElementById("result_in").value = null;
-    return;
+function fixTypeInput(input){
+
+    if (input.value == '') {input.value = 0;}
+    if (input.value < 0)   {input.value = 0;}
+    if (input.value > 100) {input.value = 100;}
+    input.value = parseInt(input.value, 10);
+
 }
 
-function calcMean() {
-	var sum = 0;
-    var num4 = document.getElementById("num4")
-    var den4 = document.getElementById("den4").value
-    if(num4.value != -1){
-        for (var i = 1; i < 5; i++){
-            sum += document.getElementById("num" + i).value / document.getElementById("den" + i).value;
-        }
+function fixHWInput(input){
 
-        document.getElementById("result_in").value = sum / 4 * 100;
-    }
-    else{
-        for (var i = 1; i < 4; i++){
-            sum += document.getElementById("num" + i).value / document.getElementById("den" + i).value;
-        }
-        num4.value = (document.getElementById("result_in").value / 100 * 4 - sum)*den4;
-    }
-	return;
+    if (input.value == '') {input.value = 0;}
+    if (input.value < 0)   {input.value = 0;}
+    input.value = parseInt(input.value, 10);
+
 }
 
-function calcWeight() {
-	var sum = 0;
-	var weight = 0;
+function fixTypeInputUpdate(input){
 
-    var num4 = document.getElementById("num4")
-    var den4 = document.getElementById("den4").value
-    var weight4 = parseInt(document.getElementById("weight4").value)
-    if (num4.value != -1) {
-        for (var i = 1; i < 5; i++){
-            var w = parseInt(document.getElementById("weight" + i).value);
-            sum += document.getElementById("num" + i).value / document.getElementById("den" + i).value * w;
-            weight += w;
-        }
+    if (input.value == '') {input.value = 0;}
+    if (input.value < 0)   {input.value = 0;}
+    if (input.value > 100) {input.value = 100;}
+    totalElem = document.getElementById('total')
+    total = parseInt(totalElem.value, 10);
+    console.log(totalElem.value);
+    console.log(input.old, input.value);
+    total += parseInt(input.value,10) - parseInt(input.old,10);
+    input.old = input.value;
+    totalElem.value = total;
+    return total;
 
-        document.getElementById("result_in").value = sum / weight * 100;
-    }
-    else {
-        for (var i = 1; i < 4; i++){
-            var w = parseInt(document.getElementById("weight" + i).value);
-            sum += document.getElementById("num" + i).value / document.getElementById("den" + i).value * w;
-            weight += w;
-        }
-
-        num4.value = (document.getElementById("result_in").value / 100 * (weight + weight4) - sum)/weight4*den4;
-    }
-	return;
 }
 
-function updatePercent() {
-    for (var i = 1; i < 5; i++){
-        document.getElementById("percent"+i).innerText =
-            document.getElementById("num" + i).value / document.getElementById("den" + i).value*100 + "%";
-        }
-    return;
+function submitChange(){
+
+    document.getElementById('tokiform').action = '/alter';
+    document.getElementById('tokiform').submit();
+
 }
+
+function deleteEntry(){
+
+    document.getElementById('tokiform').action = '/delete';
+    document.getElementById('tokiform').submit();  
+
+}
+
+/*function register() {
+
+    name = document.getElementById('name').value;
+    height = document.getElementById('height').value;
+    weight = document.getElementById('weight').value;
+    fly = document.getElementById('fly').value;
+    fight = document.getElementById('fight').value;
+    fire = document.getElementById('fire').value;
+    water = document.getElementById('water').value;
+    electric = document.getElementById('electric').value;
+    ice = document.getElementById('ice').value;
+    trainer = document.getElementById('trainer').value;
+
+
+    if (name.validity.valueMissing==false){}
+}*/

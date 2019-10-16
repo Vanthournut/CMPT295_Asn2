@@ -18,13 +18,13 @@
 			</header>
 
 			<main>
-				<form action="/sort" method="post">
+				<form action="sort" method="post">
 				<h1>View all Tokimon</h1>
 
 				<p>To change the way the Tokidex is sorted, select which attribute to sort by and whether you prefer
 					an ascending or descending sort on that attribute.	</p>
 
-				<select id="sortAtt" name="sortAtt">
+				<select id="sortAtt" name="sortAtt" value="<%= att %>" >
 						<option value="id">Id</option>
 						<option value="name">Name</option>
 						<option value="height">Height</option>
@@ -38,12 +38,49 @@
 						<option value="trainer">Trainer</option>
 				</select>
 
-				<select id="sortType" name="sortType">
-						<option value="ASC">Ascending</option>
-						<option value="DESC">Descending</option>
+				<select id="sortType" name="sortType" >
+						<option value="ASC" %>"  %>">Ascending</option>
+						<option value="DESC" %>">Descending</option>
 				</select>
 				
 				<input type="submit" value="Sort"/>
+
+				<br>
+
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>Tokimon Name</th>
+						<th>Weight</th>
+						<th>Height</th>
+						<th>Fly</th>
+						<th>Fight</th>
+						<th>Fire</th>
+						<th>Water</th>
+						<th>Electric</th>
+						<th>Ice</th>
+						<th>Total</th>
+						<th>Trainer Name</th>
+					</tr>
+
+					<% results.forEach(function(r) { %>
+						<tr>
+							<th><%= r.id %></th>
+							<th><%= r.name %></th>
+							<th><%= r.weight %></th>
+							<th><%= r.height %></th>
+							<th><%= r.fly %></th>
+						  <th><%= r.fight %></th>
+						  <th><%= r.fire %></th>
+						  <th><%= r.water %></th>
+						  <th><%= r.electric %></th>
+						  <th><%= r.ice %></th>
+						  <th><%= r.total %></th>
+						  <th><%= r.trainer %></th>
+						</tr>
+					<% }); %>
+
+				</table>
 
 				</form>
 			</main>

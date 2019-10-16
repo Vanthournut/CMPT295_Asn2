@@ -90,6 +90,18 @@ input[type="button"]{
 	margin: 0% 0%;
 }
 
+input[type="submit"]{
+	background-color: #8087DD;
+	border-color: #000;
+	border-radius: 5px;
+	border-style: none none solid;
+	border-width: medium medium 3px;
+	color: #FFFFFF;
+	font-size: 12pt;
+	font-weight: normal;
+	margin: 0% 0%;
+}
+
 footer {
 	background-color: #000000;
 }
