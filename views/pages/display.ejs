@@ -18,7 +18,7 @@
 			</header>
 			<% results.forEach(function(r) {  %>
 
-			<main style='background-image:linear-gradient(#000000 0%, #ff0000 <%= r.fire/6 %>%, #ff8000 <%= r.fight/6 + 100/6%>%, #ffff00 <%= r.electric/6 + 200/6%>%, #00ff00 <%= r.fly/6 +300/6%>%, #00ffff <%= r.ice/6 +400/6%>%, #0000ff <%= r.water/6+500/6%>%, #000000 100%);'>
+			<main style='background-image:linear-gradient(#000000 0%, rgba(255, 0, 0, <%= r.fire/100 %>) <%=100/7%>%, rgba(255,128,0,<%= r.fight/100%>) <%=200/7%>%, rgba(255,255,0,<%= r.electric/100%>) <%=300/7%>%, rgba(0,255,0, <%= r.fly/100 %>) <%=400/7%>%, rgba(0,255,255,<%= r.ice/100%>) <%=500/7%>%, rgba(0,0,255,<%= r.water/100%>) <%=600/7%>%, #000000 100%);'>
 				<form id='tokiform' method='POST'>
 				<input type='hidden' id= 'hiddenField' name='id' value=<%= r.id %> />
 				<p id="id">Tokimon ID: <br><%= r.id %></p>				
